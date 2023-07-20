@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Ship
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ships\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=up\ down\ left\ right
+comment1.target=void\ movement(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=shootKey\ rotation\ target\ noHealthbar
+comment2.target=void\ shoot(java.lang.String,\ int,\ java.lang.Class,\ int)
+numComments=3
