@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class Sea extends World
 {
     // Las barras de vida de cada jugador
@@ -17,6 +18,7 @@ public class Sea extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 599, 1); 
         prepare();
+        
     }
     
     /**
@@ -29,13 +31,15 @@ public class Sea extends World
         healthbar1.setLocation(888,34);
         Player1 ship = new Player1();
         addObject(ship,764,492);
-        
+
         addObject(healthbar2,176,38);
         Player2 ship2 = new Player2();
         addObject(ship2,160,89);
         ship2.setLocation(160,89);
         ship2.setLocation(192,104);
     }
+    
+
     
     // Retorna una de las barras
     public Healthbar getHealthbar(int player){

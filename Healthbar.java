@@ -1,26 +1,43 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Healthbar here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Healthbar extends Actor
-{
+public class Healthbar extends Actor {
     // Vida inicial
-    private int health = 100;
-    
-    public void act(){
+    private int maxHealth = 100;
+    private int health = maxHealth;
+    private int barWidth = 100;
+    private int barHeight = 10;
+    private Color bgColor = Color.GRAY;
+    private Color barColor = Color.GREEN;
+
+    public Healthbar() {
+        updateImage();
     }
-    
+
+    public void act() {
+    }
+
     // Resta a la vida
-    public void substractHealth(int hp){
+    public void subtractHealth(int hp) {
         health -= hp;
+        if (health < 0) {
+            health = 0;
+        }
+        updateImage();
     }
-    
+
     // Retorna la vida actual
-    public int getHp(){
+    public int getHp() {
         return health;
+    }
+
+    // Hace que la barra de vida se redusca con la vida
+    private void updateImage() {
+        GreenfootImage image = new GreenfootImage(barWidth + 2, barHeight + 2);
+        image.setColor(bgColor);
+        image.fillRect(0, 0, barWidth + 2, barHeight + 2);
+        image.setColor(barColor);
+        int barLength = (int) Math.ceil((double) health / maxHealth * barWidth);
+        image.fillRect(1, 1, barLength, barHeight);
+        setImage(image);
     }
 }

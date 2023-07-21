@@ -30,12 +30,12 @@ public class Projectile extends Actor
             // Toma la barra de vida del barco dañado
             Sea myWorld = (Sea) getWorld();
             Healthbar health = myWorld.getHealthbar(noHealthbar);
-            
+
             // Resta 10 a la vida
-            health.substractHealth(10);
-            
+            health.subtractHealth(10);
+
             // Si la vida llega a 0, elimina el barco
-            if (health.getHp() == 0){
+            if (health.getHp() == 0) {
                 getWorld().removeObject(getOneIntersectingObject(null));
                 Greenfoot.stop();
             }
