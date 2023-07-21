@@ -8,12 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Actor
 {
-    /**
-     * Act - do whatever the Button wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    private boolean mouse = false;
+    private int max_transparency = 255;
+    
+    // Revisa si el cursor se encuentra sobre el botón
+    public void hover(){
+        if (Greenfoot.mouseMoved(null)){
+            mouse = Greenfoot.mouseMoved(this);
+        }
+        
+        if (mouse){
+            adjTransparency(max_transparency/2);
+        } 
+        else {
+            adjTransparency(max_transparency);
+        }
+    }
+    
+    // Crea un nuevo mundo si se da click al botón
+    public void click(World world){
+        if (Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(world);
+        }
+    }
+    
+    // Cambia la transparencia del botón
+    public void adjTransparency(int adj){
+        GreenfootImage temp = getImage();
+        temp.setTransparency(adj);
+        setImage(temp);
     }
 }

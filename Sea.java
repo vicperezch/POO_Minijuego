@@ -26,7 +26,7 @@ public class Sea extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {
+    {    
         addObject(healthbar1,783,136);
         healthbar1.setLocation(888,34);
         Player1 ship = new Player1();

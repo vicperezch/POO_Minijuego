@@ -37,7 +37,7 @@ public class Projectile extends Actor
             // Si la vida llega a 0, elimina el barco
             if (health.getHp() == 0) {
                 getWorld().removeObject(getOneIntersectingObject(null));
-                Greenfoot.stop();
+                Greenfoot.setWorld(new EndScreen("Jugador " + noHealthbar));
             }
             getWorld().removeObject(this);
         }
