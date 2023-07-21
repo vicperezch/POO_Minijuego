@@ -4,6 +4,6 @@ public class Player2 extends Ship{
     
     public void act() {
         movement("w", "s", "d", "a");
-        shoot("space", 90, Player1.class, 1);
+        shoot("e", 90, Player1.class, 1);
     }
 }

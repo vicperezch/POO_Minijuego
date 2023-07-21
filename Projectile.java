@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Projectile here.
@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Projectile extends Actor
 {
+    GreenfootImage newImage = new GreenfootImage("explosion.png");
     private int direction;
     private Class attacking;
     private int noHealthbar;
@@ -27,6 +28,7 @@ public class Projectile extends Actor
     public void collision(){
         // Revisa si está colisionando con el otro barco
         if (isTouching(attacking)) {
+            Greenfoot.playSound("explosion.wav");
             // Toma la barra de vida del barco dañado
             Sea myWorld = (Sea) getWorld();
             Healthbar health = myWorld.getHealthbar(noHealthbar);
@@ -37,13 +39,17 @@ public class Projectile extends Actor
             // Si la vida llega a 0, elimina el barco
             if (health.getHp() == 0) {
                 getWorld().removeObject(getOneIntersectingObject(null));
+                Greenfoot.stop();
                 Greenfoot.setWorld(new EndScreen("Jugador " + noHealthbar));
+                Greenfoot.playSound("explosion.wav");
             }
+            setImage(newImage);
             getWorld().removeObject(this);
         }
         
         // Elimina el proyectil si colisiona con otro proyectil
         else if (isTouching(Projectile.class)){
+            setImage(newImage);
             getWorld().removeObject(this);
         }
         
