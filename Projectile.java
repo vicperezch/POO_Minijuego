@@ -8,10 +8,10 @@
  */
 public class Projectile extends Actor
 {
-    GreenfootImage newImage = new GreenfootImage("explosion.png");
     private int direction;
     private Class attacking;
     private int noHealthbar;
+    private int timer = 100;
     
     public void act()
     {
@@ -29,6 +29,8 @@ public class Projectile extends Actor
         // Revisa si está colisionando con el otro barco
         if (isTouching(attacking)) {
             Greenfoot.playSound("explosion.wav");
+            getWorld().addObject(new Explosion(), getX(), getY());
+            
             // Toma la barra de vida del barco dañado
             Sea myWorld = (Sea) getWorld();
             Healthbar health = myWorld.getHealthbar(noHealthbar);
@@ -42,6 +44,7 @@ public class Projectile extends Actor
                 Greenfoot.setWorld(new EndScreen("Jugador " + noHealthbar));
                 Greenfoot.playSound("explosion.wav");
             }
+            
             getWorld().removeObject(this);
         }
         
