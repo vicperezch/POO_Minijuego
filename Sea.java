@@ -27,13 +27,13 @@ public class Sea extends World
      */
     private void prepare()
     {    
-        addObject(healthbar1,783,136);
-        healthbar1.setLocation(888,34);
-        Player1 ship = new Player1();
+        addObject(healthbar2,783,136);
+        healthbar2.setLocation(888,34);
+        Player2 ship = new Player2();
         addObject(ship,764,492);
 
-        addObject(healthbar2,176,38);
-        Player2 ship2 = new Player2();
+        addObject(healthbar1,176,38);
+        Player1 ship2 = new Player1();
         addObject(ship2,160,89);
         ship2.setLocation(160,89);
         ship2.setLocation(192,104);

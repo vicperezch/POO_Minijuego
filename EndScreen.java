@@ -15,11 +15,14 @@ public class EndScreen extends World
     }
     
     // Crea los textos en pantalla
-    public void prepare(String win){
-        Text winner = new Text("¡" + win + " ha ganado!", 60);
+    public void prepare(String message){
+        PlayAgain winner = new PlayAgain(message, 60);
         addObject(winner, getWidth()/2, getHeight()/2);
         
-        Text playAgain = new Text("Presiona \"P\" para volver a jugar", 25);
+        PlayAgain playAgain = new PlayAgain("\"P\" para volver a jugar", 25);
         addObject(playAgain, getWidth()/2, getHeight()/2 + 50);
+        
+        PlayAgain exit = new PlayAgain("\"O\" para salir", 25);
+        addObject(exit, getWidth()/2, getHeight()/2 + 85);
     }
 }

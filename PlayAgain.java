@@ -6,17 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Text extends Button
+public class PlayAgain extends Button
 {
     // Inicia el juego nuevamente
     public void act(){
         if (Greenfoot.isKeyDown("p")){
             Greenfoot.setWorld(new Sea());
         }
+        if (Greenfoot.isKeyDown("o")){
+            Greenfoot.setWorld(new MainMenu());
+            Greenfoot.stop();
+        }
     }
     
     // Muestra un mensaje en pantalla
-    public Text(String message, int fontSize)
+    public PlayAgain(String message, int fontSize)
     {
         GreenfootImage finalText = new GreenfootImage(900, 100);
         Font adjusted = new Font(true, false, fontSize);

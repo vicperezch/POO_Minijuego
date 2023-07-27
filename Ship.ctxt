@@ -5,4 +5,6 @@ comment1.params=up\ down\ left\ right
 comment1.target=void\ movement(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=rotation\ target\ noHealthbar
 comment2.target=void\ shoot(int,\ java.lang.Class,\ int)
-numComments=3
+comment3.params=otherShip
+comment3.target=void\ checkShip(java.lang.Class)
+numComments=4

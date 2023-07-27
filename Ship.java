@@ -29,4 +29,12 @@ public class Ship extends Actor
             Projectile projectile = new Projectile(getRotation() + rotation, target, noHealthbar);
             getWorld().addObject(projectile, getX(), getY());
     }
+    
+    // Colisión entre barcos
+    public void checkShip(Class otherShip){
+        if (isTouching(otherShip)){
+            Greenfoot.playSound("explosion.wav");
+            Greenfoot.setWorld(new EndScreen("¡Ambos se hundieron!"));
+        }
+    }
 }

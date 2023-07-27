@@ -31,7 +31,7 @@ public class Projectile extends Actor
             Greenfoot.playSound("explosion.wav");
             getWorld().addObject(new Explosion(), getX(), getY());
             
-            // Toma la barra de vida del barco dañado
+            // Toma la barra de vida del barco dañado y resta 10
             Sea myWorld = (Sea) getWorld();
             Healthbar health = myWorld.getHealthbar(noHealthbar);
 
@@ -41,7 +41,7 @@ public class Projectile extends Actor
             // Si la vida llega a 0, elimina el barco
             if (health.getHp() == 0) {
                 getWorld().removeObject(getOneIntersectingObject(null));
-                Greenfoot.setWorld(new EndScreen("Jugador " + (noHealthbar % 2 + 1)));
+                Greenfoot.setWorld(new EndScreen("¡Jugador " + (noHealthbar % 2 + 1) + " ha ganado!"));
                 Greenfoot.playSound("explosion.wav");
             }
             
