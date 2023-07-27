@@ -41,17 +41,13 @@ public class Projectile extends Actor
             // Si la vida llega a 0, elimina el barco
             if (health.getHp() == 0) {
                 getWorld().removeObject(getOneIntersectingObject(null));
-                Greenfoot.setWorld(new EndScreen("Jugador " + noHealthbar));
+                Greenfoot.setWorld(new EndScreen("Jugador " + (noHealthbar % 2 + 1)));
                 Greenfoot.playSound("explosion.wav");
             }
             
             getWorld().removeObject(this);
-        }
-        
-        // Elimina el proyectil si colisiona con otro proyectil
-        else if (isTouching(Projectile.class)){
-            getWorld().removeObject(this);
-        }
+            
+        } 
         
         // Elimina el proyectil al llegar al borde del mapa
         else if (isAtEdge()) {

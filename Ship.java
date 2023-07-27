@@ -25,10 +25,8 @@ public class Ship extends Actor
     }
     
     // Disparo
-    public void shoot(String shootKey, int rotation, Class target, int noHealthbar) {
-        if (Greenfoot.isKeyDown(shootKey)){
+    public void shoot(int rotation, Class target, int noHealthbar) {
             Projectile projectile = new Projectile(getRotation() + rotation, target, noHealthbar);
             getWorld().addObject(projectile, getX(), getY());
-        }
     }
 }
