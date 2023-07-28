@@ -32,12 +32,17 @@ public class Healthbar extends Actor {
 
     // Hace que la barra de vida se reduzca con la vida
     private void updateImage() {
+        GreenfootImage image2 = new GreenfootImage(110, 50);
+        image2.setColor(Color.WHITE);
+        image2.fillRect(0, 0, 110, 50);
+        
         GreenfootImage image = new GreenfootImage(barWidth + 2, barHeight + 2);
         image.setColor(bgColor);
         image.fillRect(0, 0, barWidth + 2, barHeight + 2);
         image.setColor(barColor);
         int barLength = (int) Math.ceil((double) health / maxHealth * barWidth);
         image.fillRect(1, 1, barLength, barHeight);
+        setImage(image2);
         setImage(image);
     }
 }

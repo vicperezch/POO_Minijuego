@@ -6,6 +6,7 @@ public class Player2 extends Ship{
     
     public void act() {
         movement("up", "down", "right", "left");
+        leaveTrail();
         shootProjectile();
         fireDelay--;
     }

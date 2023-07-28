@@ -11,9 +11,11 @@ public class Ship extends Actor
     // Movmiento de los barcos
     public void movement(String up, String down, String left, String right){
         if (Greenfoot.isKeyDown(up)){
+            leaveTrail();
             move(3);
         }
         if (Greenfoot.isKeyDown(down)){
+            leaveTrail();
             move(-1);
         }
         if (Greenfoot.isKeyDown(right)){
@@ -24,6 +26,11 @@ public class Ship extends Actor
         }
     }
     
+    //Rastro
+    public void leaveTrail() {
+        getWorld().addObject(new Rastro(), getX(), getY());
+    }
+
     // Disparo
     public void shoot(int rotation, Class target, int noHealthbar) {
             Projectile projectile = new Projectile(getRotation() + rotation, target, noHealthbar);

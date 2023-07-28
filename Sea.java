@@ -27,6 +27,7 @@ public class Sea extends World
      */
     private void prepare()
     {    
+        
         addObject(healthbar2,783,136);
         healthbar2.setLocation(888,34);
         Player2 ship = new Player2();
