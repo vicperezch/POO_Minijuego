@@ -13,7 +13,7 @@ public class Healthbar extends Actor {
         updateImage();
     }
 
-    public void act() {
+    public void act() {        
     }
 
     // Resta a la vida
