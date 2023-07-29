@@ -10,15 +10,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Sea extends World
 {
     // Las barras de vida de cada jugador
-    private Healthbar healthbar1 = new Healthbar();
-    private Healthbar healthbar2 = new Healthbar();
+    private Healthbar healthbar1 = new Healthbar("Jugador 1");
+    private Healthbar healthbar2 = new Healthbar("Jugador 2");
+    private GreenfootSound backgroundMusic;
     
     public Sea()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 599, 1); 
         prepare();
-        
+        backgroundMusic = new GreenfootSound("2020-03-22_-_8_Bit_Surf_-_FesliyanStudios.com_-_David_Renda.mp3");
+        backgroundMusic.playLoop();
+
     }
     
     /**
